@@ -143,6 +143,22 @@ app.post('/login', async (req, res) => {
   }
 });
 
+app.get('/users', auth, async (req, res) => {
+  try {
+    const users = await User.find({}).select('-Password -token');
+    
+    res.status(200).json({
+      success: true,
+      count: users.length,
+      users: users
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server error');
+  }
+});
+
+
 app.get('/profile', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-Password');
@@ -209,3 +225,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
