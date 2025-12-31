@@ -1,80 +1,80 @@
-# Logincodespace-01
+-> Logincodespace-01
 
 A secure user authentication system built with Node.js, Express.js, and MongoDB featuring JWT-based authentication and password encryption.
 
-## Features
+-> Features
 
-- User registration with secure password hashing (BCrypt)
+- User registration with secure password hashing using BCrypt npm module
 - JWT-based login with cookie management
 - Profile view and update functionality
-- MongoDB database integration
-- CSV export of user data
+- Store data in MongoDB database 
+- CSV storing and export of user data
 - Protected routes with authentication middleware
 
-## Tech Stack
+-> Tech Stack
 
-- **Node.js** & **Express.js** - Backend framework
-- **MongoDB** & **Mongoose** - Database
-- **JWT** - Authentication
-- **BCrypt** - Password encryption
-- **dotenv** - Environment variables
+->> Node.js & Express.js - Backend framework
+->> MongoDB & Mongoose - Database
+->> JWT - Authentication
+->> BCrypt - Password encryption
+->> dotenv - Environment variables
 
-## Installation
+-> Installation
 
 1. Clone the repository:
-```bash
+```
 git clone https://github.com/Thesageof69/Logincodespace-01.git
 cd Logincodespace-01
 ```
 
 2. Install dependencies:
-```bash
+```
 npm install
 ```
 
-3. Configure environment variables in `.env`:
-```env
+3. Configure environment variables in .env:
+```
 PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+MONGODB_URI=mongodb_connection_string
+JWT_SECRET=jwt_secret_key
 ```
 
 4. Start the server:
-```bash
+```
 node login.js
 ```
 
 Server runs on `http://localhost:3000`
 
-## API Endpoints
+-> API Endpoints
 
-### POST `/register`
-Register a new user
-```json
+->> POST `/register`
+To register a new user
+```
 {
-  "FirstName": "John",
-  "LastName": "Doe",
-  "Email": "john@example.com",
+  "FirstName": "Milan",
+  "LastName": "Sam",
+  "Email": "milan@gamil.com",
   "Password": "password123"
 }
 ```
 
-### POST `/login`
+-> POST `/login`
 Authenticate user
-```json
+```
 {
-  "Email": "john@example.com",
+  "Email": "milan@gmail.com",
   "Password": "password123"
 }
 ```
 
-### GET `/profile` 
+->> GET `/profile` 
 Get user profile (requires authentication)
 
-### PUT `/profile`
+->> PUT `/profile`
 Update user profile (requires authentication)
 
-## Project Structure
+-> Project Structure
 
 ```
 ├── login.js       # Main application file
@@ -84,14 +84,14 @@ Update user profile (requires authentication)
 └── .env           # Environment variables
 ```
 
-## Security Features
+-> Security Features
 
-- BCrypt password hashing (10 salt rounds)
+- BCrypt password hashing (10)
 - JWT tokens with 2-hour expiration
 - HTTP-only cookies
 - Protected routes with authentication middleware
 
-## Author
+-> Author
 
-**Thesageof69**
+Thesageof69
 - GitHub: [@Thesageof69](https://github.com/Thesageof69)
