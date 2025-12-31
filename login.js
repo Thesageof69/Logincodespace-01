@@ -145,6 +145,7 @@ app.post('/login', async (req, res) => {
 
 app.get('/users', auth, async (req, res) => {
   try {
+    
     const users = await User.find({}).select('-Password -token');
     
     res.status(200).json({
@@ -157,7 +158,6 @@ app.get('/users', auth, async (req, res) => {
     res.status(500).send('Server error');
   }
 });
-
 
 app.get('/profile', auth, async (req, res) => {
   try {
@@ -225,4 +225,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-
